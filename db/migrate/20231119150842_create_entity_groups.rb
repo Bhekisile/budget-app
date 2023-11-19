@@ -1,8 +1,8 @@
 class CreateEntityGroups < ActiveRecord::Migration[7.1]
   def change
     create_table :entity_groups do |t|
-      t.bigint :entity_id
-      t.bigint :group_id
+      t.references :entity, null: false, foreign_key: true
+      t.references :group, null: false, foreign_key: true
 
       t.timestamps
     end
