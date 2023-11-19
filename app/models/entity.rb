@@ -1,5 +1,5 @@
 class Entity < ApplicationRecord
-  belongs_to :users
-  belongs_to :groups
-  belongs_to :entity_groups
+  belongs_to :author, class_name: 'User', foreign_key: :author_id
+  has_many :groups, through: :entity_groups
+  has_many :entity_groups, dependent: :destroy
 end

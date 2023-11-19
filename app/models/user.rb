@@ -1,4 +1,4 @@
 class User < ApplicationRecord
-  has_many :entities, foreign_key: :author_id
-  has_many :groups
+  has_many :entities, class_name: 'entity', foreign_key: :author_id, dependent: :destroy
+  has_many :groups, dependent: :destroy
 end
