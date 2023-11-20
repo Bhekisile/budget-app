@@ -1,8 +1,8 @@
 class GroupsController < ApplicationController
-  # before_action :authenticate_user!
+  before_action :authenticate_user!
 
   def index
-    @groups = current_user.groups.includes(:entities)
+    # @groups = current_user.group.includes(:entities)
   end
 
   def new
