@@ -14,6 +14,6 @@ Rails.application.routes.draw do
 
   resources :categories, only: %i[index home new create destroy] do
     get :home, on: :collection
-    resources :ExpensesController, only: %i[index new create]
+    resources :transactions, only: %i[index new create]
   end
 end

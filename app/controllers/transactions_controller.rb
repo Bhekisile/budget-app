@@ -1,11 +1,11 @@
-class ExpensesController < ApplicationController
+class TransactionsController < ApplicationController
   before_action :authenticate_user!
   # before_action :set_group
 
   def @category = Group.find(params[:category_id])
-    @expenses = @category.entities
-    @expenses = @expenses.sort { |a, b| b.created_at <=> a.created_at }
-    @total = @expenses.map(&:amount).sum
+    @transactions = @category.entities
+    @transactions = @transactions.sort { |a, b| b.created_at <=> a.created_at }
+    @total = @transactions.map(&:amount).sum
   end
 
   def new
@@ -19,9 +19,9 @@ class ExpensesController < ApplicationController
 
     if @purchase.save
       EntityGroup.create(group_id: @category.id, entity_id: @purchase.id)
-      redirect_to category_expenses_path(group_id: @category.id), notice: 'Expenses successfully created.'
+      redirect_to category_transaction_path(group_id: @category.id), notice: 'Transaction successfully created.'
     else
-      redirect_to new_category_expense_path(group_id: @category.id), notice: 'Could not create expenses.'
+      redirect_to new_category_transaction_path(group_id: @category.id), notice: 'Could not create transaction.'
     end
   end
 

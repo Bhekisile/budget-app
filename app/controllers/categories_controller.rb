@@ -1,4 +1,4 @@
-class GroupsController < ApplicationController
+class CategoriesController < ApplicationController
   before_action :authenticate_user!
 
   def home

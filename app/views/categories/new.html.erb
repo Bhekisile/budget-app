@@ -1,6 +1,6 @@
 <div class="category-container">
   <% @title = "New Category" %>
-  <%= render "shared/navbar", locals: { title: @title }, back: true %>
+  <%# <%= render "shared/navbar", locals: { title: @title }, back: true %>
 
   <%= form_with model: @group, class: "pt-12", url: categories_path do |form| %>
     <div class="row justify-content-center mt-5 media">
