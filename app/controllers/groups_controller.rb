@@ -19,13 +19,9 @@ class GroupsController < ApplicationController
     end
   end
 
-  def show
+  def show; end
 
-  end
-
-  def destroy
-
-  end
+  def destroy; end
 
   private
 

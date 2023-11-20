@@ -13,13 +13,9 @@ class EntitiesController < ApplicationController
     @entity = Entity.new
   end
 
-  def create
+  def create; end
 
-  end
-
-  def destroy
-
-  end
+  def destroy; end
 
   def set_group
     @group = current_user.groups.find(params[:group_id])
