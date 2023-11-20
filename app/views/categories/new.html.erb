@@ -1,0 +1,15 @@
+<div class="category-container">
+  <% @title = "New Category" %>
+  <%= render "shared/navbar", locals: { title: @title }, back: true %>
+
+  <%= form_with model: @group, class: "pt-12", url: categories_path do |form| %>
+    <div class="row justify-content-center mt-5 media">
+      <div class="col-12 col-md-8 col-lg-6">
+        <%= form.text_field :name, required: true, placeholder: "Enter New Category", class: 'form-control mb-3' %>
+        <%= form.text_field :icon, id: "icon-input", placeholder: "Enter Image URL for the icon", class: 'form-control mb-3' %>
+        <img id="icon-preview" class="mb-3" style="max-width: 100px;" />
+      </div>
+    </div>
+    <%= form.submit "CREATE CATEGORY", class: 'btn text-white fixed-bottom w-100', style: 'background-color: #5fb523; padding: 1rem 0' %>
+  <% end %>
+</div>

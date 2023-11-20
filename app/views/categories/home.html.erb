@@ -1,0 +1,26 @@
+<div class="mb-5">
+  <% @title = "Categories" %>
+  <%= render "shared/navbar", locals: { title: @title }, back: false %>
+
+  <% if @categories.empty? %>
+    <p class="text-center pt-5">Sorry, you've not created any categories.</p>
+  <% else %>
+    <ul class="d-flex flex-column justify-content-center pt-5">
+      <% @categories.each do |category| %>
+        <%= link_to category_expenditures_path(category_id: category.id) do %>
+          <li class="category-list-items d-flex justify-content-between align-items-center shadow p-3 my-3 bg-white">
+            <div class="d-flex gap-3 align-items-center">
+            <figure class="image">
+              <img src="<%= category.icon %>" alt="user icon">
+            </figure>
+              <div class="h5 font-weight-bold"><%= category.name %></div>
+            </div>
+            <div class="h5 font-weight-bold">$ <%= format(category.entities.sum(:amount)) %></div>
+          </li>
+        <% end %>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <%= link_to "ADD NEW CATEGORY", new_category_path, class: 'btn text-white fixed-bottom w-100', style: 'background-color: #5fb523; padding: 1rem 0' %>
+</div>
