@@ -70,3 +70,4 @@ end
 
 gem 'cancancan'
 gem 'devise'
+gem 'cssbundling-rails'
