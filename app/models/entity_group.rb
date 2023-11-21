@@ -1,4 +1,4 @@
 class EntityGroup < ApplicationRecord
-  has_many :entity
-  has_many :group
+  belongs_to :entity
+  belongs_to :group
 end

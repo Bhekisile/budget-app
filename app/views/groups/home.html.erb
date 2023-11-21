@@ -1,0 +1,29 @@
+<div class="mb-5">
+  <% @title = "Groups" %>
+  <%# <%= render "shared/navbar", locals: { title: @title }, back: false %>
+
+  <%= link_to "Sign out", destroy_user_session_path,
+          'data-turbo-method': :delete, class: "nav-link" %>
+
+  <% if @groups.empty? %>
+    <p class="text-center pt-5">Sorry, you've not created any groups.</p>
+  <% else %>
+    <ul class="d-flex flex-column justify-content-center pt-5">
+      <% @groups.each do |group| %>
+        <%= link_to group_entities_path(group_id: group.id) do %>
+          <li class="group-list-items d-flex justify-content-between align-items-center shadow p-3 my-3 bg-white">
+            <div class="d-flex gap-3 align-items-center">
+            <figure class="image">
+              <img src="<%= group.icon %>" alt="user icon">
+            </figure>
+              <div class="h5 font-weight-bold"><%= group.name %></div>
+            </div>
+            <div class="h5 font-weight-bold">$ <%= format(group.entities.sum(:amount)) %></div>
+          </li>
+        <% end %>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <%= link_to "ADD NEW GROUP", new_group_path, class: 'btn text-white fixed-bottom w-100', style: 'background-color: #5fb523; padding: 1rem 0' %>
+</div>

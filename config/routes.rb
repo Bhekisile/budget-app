@@ -2,18 +2,18 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   devise_for :users
 
-  get 'categories/home', to: 'categories#home', as: 'categories_home'
+  get 'groups/home', to: 'groups#home', as: 'groups_home'
 
   authenticated :user do
-    root 'categories#home', as: :authenticated_root
+    root 'groups#home', as: :authenticated_root
   end
 
   unauthenticated do
-    root 'categories#index', as: :unauthenticated_root
+    root 'groups#index', as: :unauthenticated_root
   end
 
-  resources :categories, only: %i[index home new create destroy] do
+  resources :groups, only: %i[index home new create destroy] do
     get :home, on: :collection
-    resources :transactions, only: %i[index new create]
+    resources :entities, only: %i[index new create]
   end
 end
