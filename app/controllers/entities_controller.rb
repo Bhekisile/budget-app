@@ -2,7 +2,8 @@ class EntitiesController < ApplicationController
   before_action :authenticate_user!
   # before_action :set_group
 
-  def @group = Group.find(params[:group_id])
+  def index
+    @group = Group.find(params[:group_id])
     @entities = @group.entities
     @entities = @entities.sort { |a, b| b.created_at <=> a.created_at }
     @total = @entities.map(&:amount).sum
@@ -25,7 +26,7 @@ class EntitiesController < ApplicationController
     end
   end
 
- private
+  private
 
   def purchases_params
     params.require(:entity).permit(:name, :amount).merge(author_id: current_user.id)
