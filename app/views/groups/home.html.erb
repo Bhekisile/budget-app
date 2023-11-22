@@ -1,46 +1,34 @@
 <div class="mb-5">
-  <% @title = "Groups" %>
-  <div class="header">
-    <%= link_to "<i class='fas fa-angle-left'></i>".html_safe, home_groups_path, class: "back" %>
-    <h1>Groups</h1>
-    <h4 class="" style="text-align: center; color: white;">
-            <%= @title %>
-    </h4>
-        <div id="menuToggle">
-          <input type="checkbox" />
-          <span></span>
-          <span></span>
-          <span></span>
-          <ul id="menu">
-            <li><a href=""><%= button_to "Sign out", destroy_user_session_path, method: "delete" %></a></li>
-          </ul>
-        </div>
-  </div>
-   
-  <% if @groups.any? %>
-  <ul class="list-group">
-    <% @groups.each do |group| %>
-      <li class="list-group-item">
-      <div class="d-flex justify-content-start">
-        <div class="p-2"><% if group.icon.present? %>
-          <%= raw group.icon %>
-        <% end %>
-        </div>
-        <div class="p-2"><h3><%= group.name %>:</h3></div>
-        <div class="p-2"><p>$<%= group.entities.collect(&:amount).sum %></p></div>
-      </div>
-      <div class="btns">
-        <div class="btn">
-          <button><a href="<%= group_entities_path(group) %>">View Entities</a></button>
-          <button><%= link_to 'Add a New Entity', new_group_entity_path(group) %></button>
-        </div>
-        </div>
-      </li>
+  <div class="ml-5"><%= link_to "<i class='fas fa-angle-left'></i>".html_safe, home_groups_path, class: "back" %></div>
+  <h4 class="text-center">Groups</h4>
+
+  <div class="d-flex justify-content-between align-items-center">
+    <%= form_for(current_user, url: destroy_user_session_path, method: :delete) do |f| %>
+    <%= f.button type: :submit do %>
+      <%= content_tag :i, "", class: "fa-solid fa-right-from-bracket" %>
     <% end %>
-  </ul>
-  <button class="btn addNew"><%= link_to 'Add New Group', new_group_path %></button>
-  <% else %>
-    <p class="msg">No group found. Click the button below to add a new group.</p>
-    <button class="btn addNew"><%= link_to 'Add New Group', new_group_path %></button>
   <% end %>
+  </div>
+
+<% if @groups.empty? %>
+    <p class="text-center pt-5">Sorry, you've not created any groups.</p>
+  <% else %>
+    <ul class="d-flex flex-column justify-content-center pt-5">
+      <% @groups.each do |group| %>
+        <%= link_to group_entities_path(group_id: group.id) do %>
+          <li class="group-list-items d-flex justify-content-between align-items-center shadow p-3 my-3 bg-white">
+            <div class="d-flex gap-3 align-items-center">
+            <figure class="image">
+              <img src="<%= group.icon %>" alt="user icon">
+            </figure>
+              <div class="h5 font-weight-bold"><%= group.name %></div>
+            </div>
+            <div class="h5 font-weight-bold">$ <%= format(group.entities.sum(:amount).to_s) %></div>
+          </li>
+        <% end %>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <%= link_to "ADD NEW GROUP", new_group_path, class: 'btn text-white fixed-bottom w-100', style: 'background-color: #5fb523; padding: 1rem 0' %>
 </div>

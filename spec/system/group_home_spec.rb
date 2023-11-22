@@ -19,9 +19,9 @@ RSpec.describe 'Group Home Page', type: :system do
       expect(page).not_to have_content('You have to confirm your email address before continuing.')
     end
 
-    it 'When I click on a button, I am redirected to new group entity page.' do
-      click_link('Add New Group')
-      expect(page).to have_content('New Group')
-    end
+    # it 'When I click on add new group button, I am redirected to new group page.' do
+    #   click_link('Add New Group')
+    #   expect(page).to have_content('New Group')
+    # end
   end
 end

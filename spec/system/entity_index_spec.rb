@@ -12,18 +12,22 @@ RSpec.describe 'Entity Index Page', type: :system do
 
   describe 'Group home contents' do
     let(:user1) do
-      User.create!(name: 'zena', email: 'test@example.com', password: 'password', confirmed_at: Time.current)
+      User.create!(name: 'zena', email: 'test2@example.com', password: 'password', confirmed_at: Time.current)
     end
-    let(:group) { Group.create(name: 'example_group', icon: 'example_icon', user_id: user1.id) }
-    let(:entity) { Entity.create(name: 'example_entity', amount: 1, group_id: group.id) }
+    let(:group) { Group.create(name: 'Nando\'s', icon: 'example_icon', user_id: user1.id) }
+    let(:entity) { Entity.create(name: 'Salad', amount: 30, group_id: group.id) }
 
     before(:each) do
-      visit group_entities_path
+      visit group_entities_path(group_id: group.id)
     end
 
     it 'should see the heading' do
       expect(page).to have_content('Details')
       expect(page).not_to have_content('You have to confirm your email address before continuing.')
     end
+
+    # it 'should see the entity name' do
+    #   expect(page).to have_content(entity.name)
+    # end
   end
 end

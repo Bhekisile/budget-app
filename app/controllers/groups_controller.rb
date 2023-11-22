@@ -1,9 +1,7 @@
 class GroupsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:index]
 
-  def index
-    @groups = current_user.groups
-  end
+  def index; end
 
   def home
     @groups = current_user.groups
