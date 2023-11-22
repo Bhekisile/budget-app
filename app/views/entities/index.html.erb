@@ -1,4 +1,6 @@
 <% @title = "Entities" %>
+  <%= render "shared/navbar", locals: { title: @title }, back: true %>
+  
 <div class="w-90 d-flex justify-content-start"><%= link_to "<i class='fas fa-angle-left'></i>".html_safe, home_groups_path, class: "back" %></div>
   <h4 class="text-center">Details</h4>
 

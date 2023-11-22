@@ -1,6 +1,6 @@
 <nav role='navigation'>
   <div class="container">
-    <% if back %>
+    <% if link_to "Back", :back %>
 
   <% if user_signed_in? && defined?(group) && request.path == group_entities_path(group_id: group.id) %>
     <%= link_to(home_groups_path(group_id: group.id), class: "btn btn-primary") do %>
@@ -10,9 +10,9 @@
       <% elsif @title == "Entities" %>
         <div class="d-flex justify-content-between align-items-center">
           <%= link_to groups_home_path do %>
-            <i class="fas fa-arrow-left" style="color: white; font-size: 1.5rem;"></i>
+            <i class="fas fa-arrow-left" style="color: grey; font-size: 1.5rem;"></i>
           <% end %>
-          <h4 class="" style="text-align: center; color: white;">
+          <h4 class="" style="text-align: center; color: grey;">
             <%= @title %>
           </h4>
           <p></p>
@@ -20,9 +20,9 @@
       <% elsif @title == "New Group" %>
         <div class="d-flex justify-content-between align-items-center">
           <%= link_to groups_home_path do %>
-            <i class="fas fa-arrow-left" style="color: white; font-size: 1.5rem;"></i>
+            <i class="fas fa-arrow-left" style="color: grey; font-size: 1.5rem;"></i>
           <% end %>
-          <h4 class="" style="text-align: center; color: white;">
+          <h4 class="" style="text-align: center; color: grey;">
             <%= @title %>
           </h4>
           <p></p>
@@ -30,9 +30,9 @@
       <% elsif @title == "New Entity" %>
         <div class="d-flex justify-content-between align-items-center">
           <%= link_to group_entities_path(@group) do %>
-            <i class="fas fa-arrow-left" style="color: white; font-size: 1.5rem;"></i>
+            <i class="fas fa-arrow-left" style="color: grey; font-size: 1.5rem;"></i>
           <% end %>
-          <h4 class="" style="text-align: center; color: white;">
+          <h4 class="" style="text-align: center; color: grey;">
             <%= @title %>
           </h4>
           <p></p>

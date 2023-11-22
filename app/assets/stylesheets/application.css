@@ -13,7 +13,7 @@
 body {
   margin: 0;
   padding: 0;
-  color: grey;
+  color: #cdcdcd;
   font-family: proxima-nova, sans-serif;
   overflow-x: hidden;
   transition: background 0.5s ease;
