@@ -1,6 +1,19 @@
 <div class="group-container">
   <% @title = "New Entity" %>
-  <%# <%= render "shared/navbar", locals: { title: @title }, back: true %> 
+  <div class="header">
+    <%= link_to "<i class='fas fa-angle-left'></i>".html_safe, home_groups_path, class: "back" %>
+    <h1>Add Entity</h1>
+      <div class="d-flex justify-content-between align-items-center">
+          <%= link_to group_entities_path(@group) do %>
+            <i class="fas fa-arrow-left" style="color: white; font-size: 1.5rem;"></i>
+          <% end %>
+          <h4 class="" style="text-align: center; color: white;">
+            <%= @title %>
+          </h4>
+          <p></p>
+      </div>
+
+  </div>
 
   <%= form_with model: @entity, url: group_entities_path(@group), class: "py-12" do |form| %>
     <div class="row justify-content-center mt-5 media">

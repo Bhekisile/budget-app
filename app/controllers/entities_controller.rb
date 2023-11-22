@@ -1,6 +1,5 @@
 class EntitiesController < ApplicationController
   before_action :authenticate_user!
-  # before_action :set_group
 
   def index
     @group = Group.find(params[:group_id])
@@ -20,7 +19,7 @@ class EntitiesController < ApplicationController
 
     if @purchase.save
       EntityGroup.create(group_id: @group.id, entity_id: @purchase.id)
-      redirect_to group_entity_path(group_id: @group.id), notice: 'Entity successfully created.'
+      redirect_to group_entities_path(group_id: @group.id), notice: 'Entity successfully created.'
     else
       redirect_to new_group_entity_path(group_id: @group.id), notice: 'Could not create entity.'
     end
