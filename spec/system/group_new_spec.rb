@@ -10,7 +10,7 @@ RSpec.describe 'Group New Page', type: :system do
   end
 
   describe 'Group new contents' do
-    group = Group.new(name: 'example_group', icon: 'example_icon', user_id: user.id)
+    Group.new(name: 'example_group', icon: 'example_icon', user_id: user.id)
     before(:each) do
       visit new_group_path
     end
