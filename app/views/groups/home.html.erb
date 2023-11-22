@@ -16,7 +16,7 @@
           </ul>
         </div>
   </div>
-  <%# <%= render "shared/navbar", locals: { title: @title, back: false } %> 
+   
   <% if @groups.any? %>
   <ul class="list-group">
     <% @groups.each do |group| %>
@@ -38,9 +38,9 @@
       </li>
     <% end %>
   </ul>
-  <button class="btn addNew"><%= link_to 'Scan', new_group_path %></button>
+  <button class="btn addNew"><%= link_to 'Add New Group', new_group_path %></button>
   <% else %>
     <p class="msg">No group found. Click the button below to add a new group.</p>
-    <button class="btn addNew"><%= link_to 'Scan', new_group_path%></button>
+    <button class="btn addNew"><%= link_to 'Add New Group', new_group_path %></button>
   <% end %>
 </div>
