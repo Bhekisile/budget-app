@@ -15,7 +15,7 @@
             </figure>
               <div class="h5 font-weight-bold"><%= group.name %></div>
             </div>
-            <div class="h5 font-weight-bold">$ <%= format(group.entities.sum(:amount).to_s) %></div>
+            <div class="h5 font-weight-bold">$ <%= format(group.entities.sum(:amount).to_s) %>
           </li>
         <% end %>
       <% end %>

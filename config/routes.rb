@@ -14,6 +14,6 @@ Rails.application.routes.draw do
 
   resources :groups, only: %i[index home new create destroy] do
     get :home, on: :collection
-    resources :entities, only: %i[index new create]
+    resources :entities, only: %i[index new create destroy]
   end
 end

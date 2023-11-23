@@ -22,6 +22,13 @@ class GroupsController < ApplicationController
     end
   end
 
+  def destroy
+    @group = Group.find(params[:id])
+    @group.destroy
+    flash[:success] = 'Group item has been removed.'
+    redirect_to home_groups_path
+  end
+
   private
 
   def group_params

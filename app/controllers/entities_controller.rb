@@ -25,6 +25,13 @@ class EntitiesController < ApplicationController
     end
   end
 
+  def destroy
+    @entity = Entity.find(params[:id])
+    @entity.destroy
+    flash[:success] = 'Entity item has been removed.'
+    redirect_to group_entities_path
+  end
+
   private
 
   def purchases_params
