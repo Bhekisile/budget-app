@@ -1,6 +1,6 @@
 <div class="mb-5">
   <% @title = "Groups" %>
-  <%= render "shared/navbar", locals: { title: @title }, back: false %>
+  <%= render "shared/navbar", locals: { title: @title, back: false } %>
 
 <% if @groups.empty? %>
     <p class="text-center pt-5">Sorry, you've not created any groups.</p>

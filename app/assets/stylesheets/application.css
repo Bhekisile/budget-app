@@ -170,17 +170,17 @@ a {
   align-items: center;
 }
 
-.nav-layout {
-  display: flex;
-  align-items: center;
+.nav-groups {
+  height: 100px;
+  border: 1px solid black;
 }
 
-#blue {
+/* #blue {
   height: 150px;
   margin: 0;
   padding: 0;
   background-color: #3778c2;
-}
+} */
 
 #menuToggle input:checked ~ ul {
   transform: none;

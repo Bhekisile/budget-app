@@ -42,7 +42,7 @@
   </div>
 
   <% if @title == "Groups" && request.path == groups_home_path && groups_path %>
-        <h4 class=" " style="text-align: left; color: white;">
+        <h4 class=" " style="text-align: center; color: black;">
             <%= @title %> 
         </h4>
         <div id="menuToggle">
@@ -51,7 +51,8 @@
           <span></span>
           <span></span>
           <ul id="menu">
-            <li><a href=""><%= button_to "Sign out", destroy_user_session_path, method: "delete" %></a></li>
+            <li><a href=""><%= button_to "Sign out", destroy_user_session_path,
+          'data-turbo-method': :delete, class: "nav-link" %></a></li>
           </ul>
         </div>
   <% end %>

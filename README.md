@@ -137,6 +137,8 @@ If you like this project please give it a ⭐️
 
 I would like to thank Microverse for giving me all the necessary knowledge I need to make this project.
 
+[Gregoire Vella](www.gregoirevella.com) the [author of the original design], as required by the [Creative Commons License](https://creativecommons.org/licenses/).
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- LICENSE -->
