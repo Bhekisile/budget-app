@@ -170,17 +170,18 @@ a {
   align-items: center;
 }
 
+
 .nav-layout {
   display: flex;
   align-items: center;
-}
+} 
 
 #blue {
   height: 150px;
   margin: 0;
   padding: 0;
   background-color: #3778c2;
-}
+  }
 
 #menuToggle input:checked ~ ul {
   transform: none;
@@ -236,7 +237,7 @@ a {
 
   .new-container div {
     font-weight: 600;
-    color: grey;
+    color: #8b8b8b;
   }
 
   .image {
@@ -251,6 +252,6 @@ a {
 
   .group-text div {
     font-weight: 600;
-    color: grey;
+    color: #8b8b8b;
   }
 }

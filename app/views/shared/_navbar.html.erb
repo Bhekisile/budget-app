@@ -1,4 +1,4 @@
-<nav role='navigation' class="nav-layout" id="blue">
+<nav role='navigation' class="back-link bg-primary sticky" style="width: 100%; text-align: center; padding: 1rem 0; margin-top: 0;>
   <div class="container">
     <% if link_to "Back", :back, class: 'return-link' %>
 
@@ -42,9 +42,8 @@
   </div>
 
   <% if @title == "Groups" && request.path == groups_home_path && groups_path %>
-    <div class="nav-groups">
-        <h4 class="" style="text-align: center; color: #fff;">
-            <%= @title %>
+        <h4 class="" style="text-align: left; color: white;">
+            <%= @title %> 
         </h4>
         <div id="menuToggle">
           <input type="checkbox" />
@@ -55,6 +54,5 @@
             <li><a href=""><%= button_to "Sign out", destroy_user_session_path, method: "delete" %></a></li>
           </ul>
         </div>
-    </div>
   <% end %>
 </nav>
