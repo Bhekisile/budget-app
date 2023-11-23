@@ -140,7 +140,7 @@ a {
   position: fixed;
   width: 195px;
   padding: 9px;
-  padding-top: 180px;
+  padding-top: 100px;
   left: 0;
   top: 0;
   height: 100vh;
@@ -175,12 +175,12 @@ a {
   border: 1px solid black;
 }
 
-/* #blue {
+#blue {
   height: 150px;
   margin: 0;
   padding: 0;
   background-color: #3778c2;
-} */
+}
 
 #menuToggle input:checked ~ ul {
   transform: none;
