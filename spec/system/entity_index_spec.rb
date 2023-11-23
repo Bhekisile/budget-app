@@ -22,12 +22,8 @@ RSpec.describe 'Entity Index Page', type: :system do
     end
 
     it 'should see the heading' do
-      expect(page).to have_content('Details')
+      expect(page).to have_content('Entities')
       expect(page).not_to have_content('You have to confirm your email address before continuing.')
     end
-
-    # it 'should see the entity name' do
-    #   expect(page).to have_content(entity.name)
-    # end
   end
 end

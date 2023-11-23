@@ -1,20 +1,6 @@
-<div class="mb-5">
+<div class="mb-5 mt-0">
   <% @title = "Groups" %>
   <%= render "shared/navbar", locals: { title: @title, back: false } %>
-
-  <div class="ml-5"><%= link_to "<i class='fas fa-angle-left'></i>".html_safe, home_groups_path, class: "back" %></div>
-  <%# <h4 class="text-center">Groups</h4> %>
-
-  <li class="nav-item"><%= link_to "Sign out", destroy_user_session_path,
-          'data-turbo-method': :delete, class: "nav-link" %></li>
-
-  <div class="d-flex justify-content-between align-items-center">
-    <%= form_for(current_user, url: destroy_user_session_path, method: :delete) do |f| %>
-    <%= f.button type: :submit do %>
-      <%= content_tag :i, "", class: "fa-solid fa-right-from-bracket" %>
-    <% end %>
-  <% end %>
-  </div>
 
 <% if @groups.empty? %>
     <p class="text-center pt-5">Sorry, you've not created any groups.</p>

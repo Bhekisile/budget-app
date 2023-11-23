@@ -19,9 +19,8 @@ RSpec.describe 'Group Home Page', type: :system do
       expect(page).not_to have_content('You have to confirm your email address before continuing.')
     end
 
-    # it 'When I click on add new group button, I am redirected to new group page.' do
-    #   click_link('Add New Group')
-    #   expect(page).to have_content('New Group')
-    # end
+    it 'should have a hamburger button' do
+      expect(page).to have_selector('#menuToggle')
+    end
   end
 end

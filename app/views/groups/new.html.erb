@@ -2,20 +2,6 @@
   <% @title = "New Group" %>
   <%= render "shared/navbar", locals: { title: @title }, back: true %>
 
-  <div class="header">
-    <%= link_to "<i class='fas fa-angle-left'></i>".html_safe, home_groups_path, class: "back" %>
-    <h1>New Group</h1>
-    <div class="d-flex justify-content-between align-items-center">
-          <%= link_to groups_home_path do %>
-            <i class="fas fa-arrow-left" style="color: white; font-size: 1.5rem;"></i>
-          <% end %>
-          <h4 class="" style="text-align: center; color: white;">
-            <%= @title %>
-          </h4>
-          <p></p>
-    </div>
-  </div>
-
   <%= form_with model: @group, class: "pt-12", url: groups_path do |form| %>
     <div class="row justify-content-center mt-5 media">
       <div class="col-12 col-md-8 col-lg-6">

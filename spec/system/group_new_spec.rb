@@ -19,9 +19,5 @@ RSpec.describe 'Group New Page', type: :system do
       expect(page).to have_content('New Group')
       expect(page).not_to have_content('You have to confirm your email address before continuing.')
     end
-
-    # it 'Should see the page content' do
-    #   expect(page).to have_content('Enter New Group')
-    # end
   end
 end
