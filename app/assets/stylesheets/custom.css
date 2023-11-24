@@ -35,6 +35,7 @@ body {
 
 ul {
   padding-left: 0;
+  /* margin: 2px auto; */
 }
 
 .group-list-items {
@@ -55,6 +56,18 @@ ul {
 
 .group-container {
   overflow: hidden;
+}
+
+.form-entity {
+  margin-left: 97px;
+}
+
+.group-list {
+  margin-left: -27px;
+}
+
+.login-height {
+  height: 80%;
 }
 
 .sticky {
@@ -152,16 +165,19 @@ a {
   transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
   backdrop-filter: blur(10px);
   opacity: 1;
+  text-decoration: none;
 }
 
 #menu li {
   padding: 10px 0;
   font-size: 22px;
   color: #3778c2;
+  text-decoration: none;
 }
 
 #menu li a {
   color: #3778c2;
+  text-decoration: none;
 }
 
 .entity-card {

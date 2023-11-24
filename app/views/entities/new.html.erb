@@ -1,14 +1,17 @@
 <div class="group-container">
   <% @title = "New Entity" %>
   <%= render "shared/navbar", locals: { title: @title, back: true } %>
-
+  <%# <div class="form-entity"> %>
   <%= form_with model: @entity, url: group_entities_path(@group), class: "py-12" do |form| %>
     <div class="row justify-content-center mt-5 media">
+        <div class="form-entity">
           <div class="col-lg-6 p-5 border">
             <%= form.text_field :name, required: true, placeholder: "Enter New Entity Name", class: 'form-control mb-5'%>
             <%= form.number_field :amount, required: true, placeholder: "Amount (USD)", class: 'form-control'%>
           </div>
+        </div>
     </div>
     <%= form.submit "Create Entity", class: 'btn btn-secondary fixed-bottom w-100', style: 'background-color: #5fb523; padding: 1rem 0' %>
   <% end %>
+  <%# </div> %>
 </div>

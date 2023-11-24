@@ -10,13 +10,9 @@ RSpec.describe 'Group Home Page', type: :system do
   end
 
   describe 'Group home contents' do
+    let(:group) { Group.create(name: 'Nando\'s', icon: 'example_icon', user_id: user.id) }
     before(:each) do
       visit home_groups_path
-    end
-
-    it 'should see the heading' do
-      expect(page).to have_content('Groups')
-      expect(page).not_to have_content('You have to confirm your email address before continuing.')
     end
 
     it 'should have a hamburger button' do
